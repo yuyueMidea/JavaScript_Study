@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<title>5ZXX键盘测试工具</title>
+</head>
+<script type="text/javascript">
+document.oncontextmenu = function (event){
+	if(window.event){
+		event = window.event;
+	}try{
+		var the = event.srcElement;
+		if (!((the.tagName == "INPUT" && the.type.toLowerCase() == "text") || the.tagName == "TEXTAREA")){
+			return false;
+		}
+		return true;
+	}catch (e){
+		return false; 
+	} 
+}
+</script>
+<style type="text/css">
+* {
+	font: 12px Consolas, "Courier New";
+	margin: 0; padding: 0;
+	list-style: none;
+}
+a { color: red; text-decoration: none; }
+a:hover { color: red; text-decoration: underline; }
+body { width: 100%; height: 100%; }
+
+li {
+	float: left; margin: 2px 0 0 2px;
+	width: 50px; height: 50px; background: white;
+	text-align: center; line-height: 50px;
+	border: 1px solid gray; border-radius: 8px;
+}
+.k002 { float: right; height: 104px; line-height: 104px; }
+.k125 { width: 64px; }
+.k150 { width: 77px; }
+.k175 { width: 90px; }
+.k200 { width: 104px; }
+.k225 { width: 118px; }
+.k275 { width: 144px; }
+.copy { width: 212px; color: blue; border-color: red; }
+.space { width: 330px; color: gray; }
+
+.ml3 { margin-left: 29px; }
+.ml5 { margin-left: 56px; }
+.mt3 { margin-top: 12px; }
+.red { color: red; border-color: red; }
+.none { border-color: white; }
+.press { color: white; background: green; }
+.press a { color: yellow; }
+.press a:hover { color: yellow; }
+.clear { clear: both; }
+
+.wrap {
+	width: 1212px; height: 336px; overflow: hidden;
+	margin: 20px auto; padding: 10px 12px 12px 10px;
+	border: 1px solid black; border-radius: 10px;
+}
+.main { float: left; width: 810px; }
+.pos { float: left; width: 162px; margin-left: 12px; }
+.num { float: left; width: 216px; margin-left: 12px; }
+</style>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery-migrate.min.js"></script>
+<script type="text/javascript">
+if (typeof $ == 'undefined') var $ = jQuery.noConflict();
+
+$(function () {
+	var isIE = $.browser.msie, ver = parseInt($.browser.version);
+	isIE && $('li[code=112]').addClass('red');
+
+	$(document).keydown(function (event) {
+		event = event || window.event;
+		event.stopPropagation();
+		event.preventDefault();
+		var code = event.keyCode;
+		// document.title = code;
+		if (isIE && code == 112) return ;
+		$('li[code=' + code + ']').addClass('press');
+	}).keyup( function (event) {
+		event = event || window.event;
+		event.stopPropagation();
+		event.preventDefault();
+		$('li[code=' + event.keyCode + ']').removeClass('press');
+	});
+
+	$('a.reload').click(function () {
+		$('li').removeClass('press');
+	});
+
+	$('a').focus(function () {
+		$(this).blur();
+	});
+
+	if ($.browser.mozilla) {
+		if (ver < 15) {
+			$('li[code=189]').attr('code', 109);
+			$('li[code=187]').attr('code', 107);
+		} else {
+			$('li[code=189]').attr('code', 173);
+			$('li[code=187]').attr('code', 61);
+		}
+		$('li[code=186]').attr('code', 59);
+	} else if (isIE && ver == '6.0') {
+		$('div.wrap').width(1218);
+		$('div.main').width(812);
+		$('div.pos').width(164);
+		$('div.num').width(218);
+	}
+
+	if (isIE && ver < 9) return ;
+
+	$(window).blur(function () {
+		$('li').removeClass('press');
+		$('div.wrap').animate({opacity : .2});
+	}).focus(function () {
+		$('li').removeClass('press');
+		$('div.wrap').stop().animate({opacity : 1});
+	});
+});
+</script>
+<body>
+	<div class="wrap">
+		<div class="main">
+			<ul>
+				<li code="27">Esc</li>
+
+				<li code="112" class="ml5">F1</li>
+				<li code="113">F2</li>
+				<li code="114">F3</li>
+				<li code="115">F4</li>
+
+				<li code="116" class="ml3">F5</li>
+				<li code="117">F6</li>
+				<li code="118">F7</li>
+				<li code="119">F8</li>
+
+				<li code="120" class="ml3">F9</li>
+				<li code="121">F10</li>
+				<li code="122">F11</li>
+				<li code="123">F12</li>
+			</ul>
+			<div class="clear"></div>
+
+			<ul class="mt3">
+				<li code="192">`</li>
+				<li code="49">1</li>
+				<li code="50">2</li>
+				<li code="51">3</li>
+				<li code="52">4</li>
+				<li code="53">5</li>
+				<li code="54">6</li>
+				<li code="55">7</li>
+				<li code="56">8</li>
+				<li code="57">9</li>
+				<li code="48">0</li>
+				<li code="189">-</li>
+				<li code="187">=</li>
+				<li code="8" class="k200">Backspace</li>
+
+				<li code="9" class="k150">Tab</li>
+				<li code="81">Q</li>
+				<li code="87">W</li>
+				<li code="69">E</li>
+				<li code="82">R</li>
+				<li code="84">T</li>
+				<li code="89">Y</li>
+				<li code="85">U</li>
+				<li code="73">I</li>
+				<li code="79">O</li>
+				<li code="80">P</li>
+				<li code="219">[</li>
+				<li code="221">]</li>
+				<li code="220" class="k150">\</li>
+
+				<li code="20" class="k175">Caps Lock</li>
+				<li code="65">A</li>
+				<li code="83">S</li>
+				<li code="68">D</li>
+				<li code="70">F</li>
+				<li code="71">G</li>
+				<li code="72">H</li>
+				<li code="74">J</li>
+				<li code="75">K</li>
+				<li code="76">L</li>
+				<li code="186">;</li>
+				<li code="222">'</li>
+				<li code="13" class="k225">Enter</li>
+
+				<li code="16" class="k225">Shift</li>
+				<li code="90">Z</li>
+				<li code="88">X</li>
+				<li code="67">C</li>
+				<li code="86">V</li>
+				<li code="66">B</li>
+				<li code="78">N</li>
+				<li code="77">M</li>
+				<li code="188">,</li>
+				<li code="190">.</li>
+				<li code="191">/</li>
+				<li code="16" class="k275">Shift</li>
+
+				<li code="17" class="k125">Ctrl</li>
+				<li class="k125 red">Win</li>
+				<li class="k125 red">Alt</li>
+				<li code="32" class="space">&copy; 2016 <a href="http://www.lanseyule.com">蓝色娱乐网</a>, Powered by <a href="http://5zxx.com/">5zxx.com</a>.</li>
+				<li class="k125 red">Alt</li>
+				<li class="k125 red">Win</li>
+				<li class="k125 red">...</li>
+				<li code="17" class="k125">Ctrl</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="pos">
+			<ul>
+				<li class="red">PrtSc</li>
+				<li code="145">ScrLk</li>
+				<li code="19">Pause</li>
+			</ul>
+			<div class="clear"></div>
+
+			<ul class="mt3">
+				<li code="45">Insert</li>
+				<li code="36">Home</li>
+				<li code="33">PgUp</li>
+				<li code="46">Delete</li>
+				<li code="35">End</li>
+				<li code="34">PgDown</li>
+				<li class="none"></li>
+				<li class="none"></li>
+				<li class="none"></li>
+				<li class="none"></li>
+				<li code="38">↑</li>
+				<li class="none"></li>
+				<li code="37">←</li>
+				<li code="40">↓</li>
+				<li code="39">→</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+
+		<div class="num">
+			<ul>
+				<li class="copy">5ZXX键盘测试 <a href="javascript:;" class="reload">[Reload]</a></li>
+			</ul>
+			<div class="clear"></div>
+
+			<ul class="mt3">
+				<li code="144">NumLk</li>
+				<li code="111">/</li>
+				<li code="106">*</li>
+				<li code="109">-</li>
+				<li code="103">7</li>
+				<li code="104">8</li>
+				<li code="105">9</li>
+				<li code="107" class="k002">+</li>
+				<li code="100">4</li>
+				<li code="101">5</li>
+				<li code="102">6</li>
+				<li code="97">1</li>
+				<li code="98">2</li>
+				<li code="99">3</li>
+				<li code="13" class="k002">Enter</li>
+				<li code="96" class="k200">0</li>
+				<li code="110">.</li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+
+</body>
+</html>
