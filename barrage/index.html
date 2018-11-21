@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<!-- // index.html文件 -->
+<div class="wrap" style="text-align: center;">
+    <h1>听妈妈的话 - 周杰伦</h1>
+    <div class="main" style="margin: 0 auto;position: relative;">
+        <canvas id="canvas" style="position: absolute;"></canvas>
+        <video src="./sintel.mp4" id="video" controls width="720" height="480"></video>
+    </div>
+    <div class="content">
+        <input type="text" id="text">
+        <input type="button" value="发弹幕" id="btn">
+        <input type="color" id="color">
+        <input type="range" id="range" max="40" min="20">
+    </div>
+</div>
+<!-- // 引入index.js文件用来实现弹幕功能 -->
+<script src="./index.js"></script>
+
+
+</body>
+</html>
