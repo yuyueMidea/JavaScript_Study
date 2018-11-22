@@ -16,6 +16,7 @@ let $txt = doc.getElementById('text');
 let $btn = doc.getElementById('btn');
 let $color = doc.getElementById('color');
 let $range = doc.getElementById('range');
+let $speed = doc.getElementById('speed');
 // index.js文件
 class CanvasBarrage {
     constructor(canvas, video, opts = {}) { 
@@ -36,7 +37,7 @@ class CanvasBarrage {
         // 设置默认参数，如果没有传就给带上
         let defOpts = {
             color: '#e91e63',
-            speed: 1.5,
+            speed: 2.5,
             opacity: 0.5,
             fontSize: 20,
             data: []
@@ -193,8 +194,11 @@ function send() {
     let value = $txt.value;  // 输入的内容
     let time = video.currentTime; // 当前视频时间
     let color = $color.value;   // 选取的颜色值
-    let fontSize = $range.value; // 选取的字号大小
-    let obj = { value, time, color, fontSize };
+    // let fontSize = $range.value; // 选取的字号大小
+    let fontSize = $range.selectedOptions[0].value; // 选取的字号大小
+    //s.selectedOptions[0].value
+    let speed = $speed.value /10; // 选取的速度大小
+    let obj = { value, time, color, fontSize, speed };
     // 添加弹幕数据
     canvasBarrage.add(obj);
     $txt.value = ''; // 清空输入框
