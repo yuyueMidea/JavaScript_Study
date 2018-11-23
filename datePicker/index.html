@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo4</title>
+	<style>
+		*{
+			padding: 0;margin: 0;
+		}
+		table{
+			border-collapse: collapse;
+		}
+		table tr th,table tr td{
+			border: 1px solid #ccc; padding: 3px 11px;
+		}
+	</style>
+	<script type="text/javascript" src='js/data.js'></script>
+</head>
+<body>
+<h2>hello!</h2>
+	
+	<input type="month" id="getMonth">
+	<hr/><br/>
+
+		
+			<table id="the_main">
+								
+			</table>
+		
+</body>
+</html>
+<script type="text/javascript">
+onload = function(){
+
+	document.getElementById('getMonth').onchange =function(){
+	
+		var year = document.getElementById('getMonth').value.split("-")[0];
+		var month = document.getElementById('getMonth').value.split("-")[1];
+		var monthData = datepicker.getMonthData(year,month);
+		console.log(monthData);
+		debugger
+		
+		var html ='<thead><tr>'+
+							'<th>日</th>'+
+							'<th>一</th>'+
+							'<th>二</th>'+
+							'<th>三</th>'+
+							'<th>四</th>'+
+							'<th>五</th>'+
+							'<th>六</th>'+
+						'</tr></thead>';
+						html += '<tbody class="context">';
+								for(var i=0; i < monthData.length; i++){
+									var date = monthData[i];							
+									if(i%7 === 0){
+										html += '<tr>';
+									}
+									html += '<td>'+date.showDate +'</td>';
+									if(i%7 === 7){
+										html += '</tr>'
+									}
+
+								};
+								
+							html +=	'</tbody>';
+							var tbody =document.createElement('tbody');
+							tbody.innerHTML =html;
+		debugger
+		var oldTbody = document.getElementById('the_main').getElementsByTagName('tbody')[0];
+		if(oldTbody){
+			document.getElementById('the_main').removeChild(oldTbody);
+		}
+		document.getElementById('the_main').append(tbody);
+		// document.body.append(document.getElementById('the_main'))
+	}
+	
+}
+</script>
