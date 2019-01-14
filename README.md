@@ -2,19 +2,15 @@
 
 ## js实现LazyMan
 
-[Lazyman.js](./lazyman/lazyman.js)
 
 ## js封装ajax,jsonp
 
-[Ajax.js](./ajax/ajax.js)
 
 ## js双向绑定
 
-[doublebinding.js](./doublebinding/doublebinding.js)
 
 ## js十种排序算法
 
-[Sort.md](./sort/sort.md)
 
 ## 返回带逗号的数字
 
