@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var txt="";
+function message()
+{
+try
+  {
+  adddlert("Welcome guest!");
+  }
+catch(err)
+  {
+  txt="本页有一个错误。\n\n";
+  txt+="错误描述：" + err.message + "\n\n";
+  txt+="点击确定继续。\n\n";
+  alert(txt);
+  }
+}
+
 function combine(val1, val2) {
   if (typeof val1 === 'number' && typeof val2 === 'number' ||
       typeof val1 === 'string' && typeof val2 === 'string') {
@@ -6,3 +26,16 @@ function combine(val1, val2) {
 
   throw new Error('Must be of type String or Number');
 }
+</script>
+</head>
+
+<body>
+<input type="button" value="查看消息" onclick="message()" />
+</body>
+
+</html>
+
+
+
+
+
