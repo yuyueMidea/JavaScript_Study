@@ -82,8 +82,21 @@ arr.indexOf(arr[i])=0
 //			var set = new Set(arr);
 //			var newArr = new Array(...set);
 //			console.log(newArr);//[1, 9, 8, 0, 6]
-
-			
+*************************************************************************************************
+方法六
+////---主要考察程序员对Object的使用，利用key来进行筛选。
+function reverseString(s) {
+    var arr = s.split('');
+    var i = 0, j = arr.length - 1;
+    while (i < j) {
+        var t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+        i++;
+        j--;
+    }
+    return arr.join('');
+}
 		
 			
 		
