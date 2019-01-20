@@ -1,0 +1,9 @@
+function randomString(n) {
+    var str = 'abcdefghijklmnopqrstuvwxyz9876543210';
+    var tmp = '';
+    var l = str.length;
+    for(var i = 0; i < n; i++) {
+        tmp += str.charAt(Math.floor(Math.random() * l));
+    }
+    return tmp;
+}
