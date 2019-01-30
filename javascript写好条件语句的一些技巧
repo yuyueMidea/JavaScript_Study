@@ -42,4 +42,34 @@ function test(color) {
 }
 
 
-//-----------------------------------
+//---------------针对上面的例子，我们可以通过Array.filter重构下代码来实现相同的结果-------------------
+const fruits = [
+    { name: 'apple', color: 'red' }, 
+    { name: 'strawberry', color: 'red' }, 
+    { name: 'banana', color: 'yellow' }, 
+    { name: 'pineapple', color: 'yellow' }, 
+    { name: 'grape', color: 'purple' }, 
+    { name: 'plum', color: 'purple' }
+];
+
+function test(color) {
+  // use Array filter to find fruits in color
+
+  return fruits.filter(f => f.color == color);
+}
+
+//-------------------我们使用Array.every来减少代码行数：---------------------------
+const fruits = [
+    { name: 'apple', color: 'red' },
+    { name: 'banana', color: 'yellow' },
+    { name: 'grape', color: 'purple' }
+  ];
+
+function test() {
+  // condition: short way, all fruits must be red
+  const isAllRed = fruits.every(f => f.color == 'red');
+
+  console.log(isAllRed); // false
+}
+
+
