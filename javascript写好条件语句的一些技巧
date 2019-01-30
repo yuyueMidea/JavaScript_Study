@@ -1,0 +1,45 @@
+// use Map to find fruits in color
+//------Map是ES2015规范之后实现的对象类型，允许你存储键值对。--------
+  const fruitColor = new Map()
+    .set('red', ['apple', 'strawberry'])
+    .set('yellow', ['banana', 'pineapple'])
+    .set('purple', ['grape', 'plum']);
+
+function test(color) {
+  return fruitColor.get(color) || [];
+}
+
+
+//------------倾向对象遍历而不是switch语句-----------
+function test(color) {
+  // use switch case to find fruits in color
+  switch (color) {
+    case 'red':
+      return ['apple', 'strawberry'];
+    case 'yellow':
+      return ['banana', 'pineapple'];
+    case 'purple':
+      return ['grape', 'plum'];
+    default:
+      return [];
+  }
+}
+
+//test results
+test(null); // []
+test('yellow'); // ['banana', 'pineapple']
+
+//------------倾向对象遍历而不是switch语句-----------
+// use object literal to find fruits in color
+  const fruitColor = {
+    red: ['apple', 'strawberry'],
+    yellow: ['banana', 'pineapple'],
+    purple: ['grape', 'plum']
+  };
+
+function test(color) {
+  return fruitColor[color] || [];
+}
+
+
+//-----------------------------------
