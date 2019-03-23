@@ -1,0 +1,42 @@
+-------------------------------------
+工厂模式：
+function createPerson(name,age,job){
+	return {
+		name: name,
+		age:age,
+		job:job,
+		sayname:function(){
+			console.log(this.name)
+		}
+	}
+}
+var p1 = createPerson('zhangsan',33,'doctor')
+var p2=createPerson('lisi',44,'enginneer')
+
+-------------------------------------
+
+-------------------------------------
+构造函数模式
+function Person(name,age,job){
+	this.name=name;
+	this.age=age;
+	this.job=job;
+	this.sayname=function(){
+		console.log(this.name)
+	}
+}
+var p1=new Person('yuyue',27,'enigneer')
+-------------------------------------
+
+-------------------------------------
+原型模式
+function Person(){}
+Person.prototype.name='yuyue'
+Person.prototype.age=27
+Person.prototype.job='wnigneer'
+Person.prototype.sayname=function(){
+	console.log(this.name)
+}
+var p1=new Person()
+console.log(p1.__proto__)   //{name: "yuyue", age: 27, sayname: ƒ, job: "wnigneer", constructor: ƒ}
+-------------------------------------
