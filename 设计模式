@@ -1,5 +1,5 @@
 -------------------------------------
-工厂模式：
+1、工厂模式：
 function createPerson(name,age,job){
 	return {
 		name: name,
@@ -16,7 +16,7 @@ var p2=createPerson('lisi',44,'enginneer')
 -------------------------------------
 
 -------------------------------------
-构造函数模式
+2、构造函数模式
 function Person(name,age,job){
 	this.name=name;
 	this.age=age;
@@ -29,7 +29,7 @@ var p1=new Person('yuyue',27,'enigneer')
 -------------------------------------
 
 -------------------------------------
-原型模式
+3、原型模式
 function Person(){}
 Person.prototype.name='yuyue'
 Person.prototype.age=27
@@ -39,4 +39,16 @@ Person.prototype.sayname=function(){
 }
 var p1=new Person()
 console.log(p1.__proto__)   //{name: "yuyue", age: 27, sayname: ƒ, job: "wnigneer", constructor: ƒ}
+**********
+原型模式-简便的写法
+function Cat(){}
+Cat.prototype={
+	name:'cafe',
+	color:'yellow',
+	sleep:function(){
+		console.log('miao-miao~')
+	}
+}
+car c1= new Cat()
+console.log(c1.__proto__)		//{name: "cafe", color: "yellow", sleep: ƒ}
 -------------------------------------
