@@ -1,0 +1,12 @@
+var host = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+"https://github.com"
+
+-------------------------------------
+var href  =  window.location.href;//完整的url
+var protocol  =  window.location.protocol;//协议
+var hostname  =  window.location.hostname;//主机名
+var host  =  window.location.host;//主机名+端口号
+var port = window.location.port;//端口号
+var pathname = window.location.pathname;//当前URL的路径部分
+var search = window.location.search;//路径的查询部分
+var hash = window.location.hash;//开始的锚点
