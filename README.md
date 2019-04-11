@@ -12,6 +12,28 @@
 
 ## js十种排序算法
 
+## 我所理解的JS ~~运算符
+```
+数字类型的字符串可以转化为纯数字
+ var a='123';
+console.log(~~a); //输出123
+字符串中带了其他字母，符号，或者其他除数字外的东西，一律输出 Number类型的0
+var a='asd';
+
+console.log(~~a); //输出0
+
+任何boolen类型的，如果为TRUE则输出1，FALSE输出0；
+ var a=1==1;
+console.log(~~a);//输出1
+ 特殊类型，转化为Boolean是true的输出1，转化为boolean是false的输出0；
+var a=undefined;
+
+console.log(~~a);//输出0
+
+var b=！undefined;
+
+console.log(~~b);//输出1
+```
 
 ## 返回带逗号的数字
 
