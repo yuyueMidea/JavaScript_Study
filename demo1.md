@@ -1,3 +1,4 @@
+## Javascript 中 Array.push 要比 Array.concat 快 945 倍！
 ```javascript
 <script>
     let arr1 = [];
