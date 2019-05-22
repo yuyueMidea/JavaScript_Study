@@ -12,3 +12,16 @@ var obj = new Proxy({},{
 		return Reflect.set(target, key,  receiver)
 	}
 })
+
+-------------------------------------
+//
+let ret35 = new Proxy({},{
+	get: function(target, property){
+		return 35
+	}
+})
+ret35.name			==>35
+ret35.age			==>35
+
+ret35.aa=11
+ret35.aa			==>35
