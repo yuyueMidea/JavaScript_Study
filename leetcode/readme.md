@@ -1,6 +1,5 @@
 ## LeetCode刷题笔记
-
-
+//
 `冒泡排序`
 
 function bubbleSort(arr) {
@@ -15,8 +14,6 @@ function bubbleSort(arr) {
     }
     console.log(arr);
 }
-
-//每次最大值放到最右后，会将本轮最后一个操作的位置作为下一轮的终点，可以减少不必要的一些冒泡
 
 `改进冒泡排序`
 function bubbleSort1(arr) {
@@ -36,3 +33,5 @@ function bubbleSort1(arr) {
     }
     console.log(arr);
 }
+
+//每次最大值放到最右后，会将本轮最后一个操作的位置作为下一轮的终点，可以减少不必要的一些冒泡
