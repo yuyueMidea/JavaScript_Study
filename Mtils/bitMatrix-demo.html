@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bitMatrix-demo</title>
+	<script type="text/javascript" src="./BitMatrix.umd.js"></script>
+	
+</head>
+<body>
+
+<div class="getdata">
+	<p class="getPa">111111111</p>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+// onload = function(){
+	let bm = new BitMatrix.BitMatrix(114,15,0);
+	bm.set(3,0,1)
+	// bm.fillColumn(3,2);
+	// bm.fillRow(3,1);
+	// bm.fillRow(5,11)
+	console.log(bm.showView());
+	// debugger
+	document.querySelector('.getPa').innerText = bm.showView()
+	let b64 = BitMatrix.BitMatrix.output(bm);
+	console.log(b64);
+// }
+	</script>
