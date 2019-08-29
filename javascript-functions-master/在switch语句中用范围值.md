@@ -15,3 +15,20 @@
         }
         return state;
       }
+
+
+    function getRank(score){
+       let state;
+       switch(true){
+           case (score>90):
+               state='A'
+               break
+           case (score<90 && score>70):
+                  state='B'
+                  break
+           case (score<90):
+                  state='C'
+                  break
+       }
+       return state
+     }
