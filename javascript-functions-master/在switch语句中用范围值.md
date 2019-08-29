@@ -26,7 +26,7 @@
            case (score<90 && score>70):
                   state='B'
                   break
-           case (score<90):
+           case (score<70):
                   state='C'
                   break
        }
