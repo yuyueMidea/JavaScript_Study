@@ -32,3 +32,11 @@
        }
        return state
      }
+
+2.创建一个纯(pure)对象
+
+     const pureObject = Object.create(null);
+     console.log(pureObject); //=> {}
+     console.log(pureObject.constructor); //=> undefined
+     console.log(pureObject.toString); //=> undefined
+     console.log(pureObject.hasOwnProperty); //=> undefined
