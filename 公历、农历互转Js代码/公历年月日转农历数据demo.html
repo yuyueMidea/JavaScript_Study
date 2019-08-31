@@ -3,20 +3,20 @@
 <head>
 	<title>公历年月日转农历数据demo</title>
 	<script type="text/javascript" src="./calendar.js"></script>
-	<script type="text/javascript" src="./jquery.min.js"></script>
-
-<script type="text/javascript">
-
-	$(function () {
-	    var lunar = calendar.solar2lunar();
-	    $('.solarlunar').html('<strong>调用代码示例Demo</strong><br />阳历：'+lunar.cYear + '年' +lunar.cMonth +  '月' + lunar.cDay +'日（'+lunar.astro+'）<br />农历：'+lunar.lYear + '年' +lunar.IMonthCn+lunar.IDayCn+'，'+lunar.gzYear+'年'+lunar.gzMonth+'月'+lunar.gzDay+'日（'+lunar.Animal+'年）');
-	});
-</script>
-	
 
 </head>
 <body>
-<div class="solarlunar"></div>
+<div class="solarlunar">
+
+<strong>调用代码示例Demo</strong><br />
+</div>
 
 </body>
 </html>
+
+<script type="text/javascript">
+
+	    var lunar = calendar.solar2lunar();
+	    document.querySelector('.solarlunar').append('阳历：'+lunar.cYear + '年' +lunar.cMonth +  '月' + lunar.cDay +'日（'+lunar.astro+'）<br />农历：'+lunar.lYear + '年' +lunar.IMonthCn+lunar.IDayCn+'，'+lunar.gzYear+'年'+lunar.gzMonth+'月'+lunar.gzDay+'日（'+lunar.Animal+'年）');
+
+</script>
