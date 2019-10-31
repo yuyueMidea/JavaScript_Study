@@ -42,6 +42,7 @@ let pipe = (...funcArgs) => compose(...funcArgs.reverse());
 上面的思路还是有点麻烦，其实不用纠结在组合，直接把前一个函数的处理参数之后的返回值传给下一个函数就可以了。
 ## 循环的方法
 
+-----------------------更简单的思路----------------------
 let compose = (...funcArgs) => (...args) => {
   for (let i = funcArgs.length - 1; i >= 0; i--) {
     args = i === funcArgs.length - 1 ? funcArgs[i](...args) : funcArgs[i](args);
