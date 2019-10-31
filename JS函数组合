@@ -9,7 +9,7 @@ let compose = (f, g) => (...args) => f(g(...args));
 两种方法一种是递归，一种是循环，其实都是一样的。具体的思路就是，先写一个组合可以两个函数的compose2，
 用compose2先把传进来的末尾的两个函数组合了，返回一个函数func，然后再compose2把func和传进来的下一个函数组合起来，以此类推。
 
-循环的方法
+## 循环的方法
 
 let compose2 = (f, g) => (...args) => f(g(...args));
 let compose = (...funcArgs) => (...args) => {
@@ -24,7 +24,7 @@ let compose = (...funcArgs) => (...args) => {
 
 // 与compose组合方向相反的函数组合函数
 let pipe = (...funcArgs) => compose(...funcArgs.reverse());
-递归的方法
+## 递归的方法
 
 let compose2 = (f, g) => (...args) => f(g(...args));
 let compose = (...funcArgs) => (...args) => {
@@ -40,7 +40,7 @@ let compose = (...funcArgs) => (...args) => {
 let pipe = (...funcArgs) => compose(...funcArgs.reverse());
 更简单的思路
 上面的思路还是有点麻烦，其实不用纠结在组合，直接把前一个函数的处理参数之后的返回值传给下一个函数就可以了。
-循环的方法
+## 循环的方法
 
 let compose = (...funcArgs) => (...args) => {
   for (let i = funcArgs.length - 1; i >= 0; i--) {
@@ -50,7 +50,7 @@ let compose = (...funcArgs) => (...args) => {
 }
 
 let pipe = (...funcArgs) => compose(...funcArgs.reverse());
-递归的方法
+## 递归的方法
 
 let compose = (...funcArgs) => (...args) => {
   let [...funcArgsCopy] = funcArgs;
