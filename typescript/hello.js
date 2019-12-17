@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-17 09:15:17
- * @LastEditTime: 2019-12-17 11:29:06
+ * @LastEditTime: 2019-12-17 11:44:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \ts-demo\hello.ts
@@ -46,7 +46,13 @@ var fibonacci4 = [1, 2, 'str', 1];
 console.log(fibonacci4);
 // 用 any 表示数组中允许出现任意类型：
 var fibonacci5 = ['qq', 123, { n: 'aa' }];
+// 一个函数有输入和输出，要在 TypeScript 中对其进行约束，需要把输入和输出都考虑到
 function sum(x, y) {
     return x + y;
 }
 console.log(sum(11, 'www'));
+// 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。
+function reverse(x) {
+    return x.toString().split('').reverse().join('');
+}
+console.log(reverse('zhangsan'));

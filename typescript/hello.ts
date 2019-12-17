@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2019-12-17 09:15:17
- * @LastEditTime: 2019-12-17 11:31:17
+ * @LastEditTime: 2019-12-17 11:44:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \ts-demo\hello.ts
@@ -70,3 +70,9 @@ function sum(x:number,y:string):string{
 	return x+y
 }
 console.log(sum(11,'www'))
+
+// 重载允许一个函数接受不同数量或类型的参数时，作出不同的处理。
+function reverse(x:number|string):string{
+		return x.toString().split('').reverse().join('')
+}
+console.log(reverse('zhangsan'))
