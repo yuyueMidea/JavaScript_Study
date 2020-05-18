@@ -1,0 +1,45 @@
+class Stack {
+    constructor (){
+        this.items = []
+    }
+    push( element ){
+        this.items.push(element)
+    }
+    pop(){
+        return this.items.pop()
+    }
+    peek(){
+        return this.items[this.items.length - 1]
+    }
+    isEmpty(){
+        return this.items.length === 0
+    }
+    clear(){
+        this.items = []
+    }
+    size(){
+        return this.items.length
+    }
+}
+
+/**
+ * 十进制转换为二进制
+ * @param {Number} bit 
+ */
+function bitset (bit){
+    if(bit == 0) return '0'
+    if(!/^[0-9]+.?[0-9]*$/.test(bit)){
+        return new Error('请输入正确的数值！')
+    }
+
+    let stack = new Stack(), result = ''
+    while (bit > 0){
+        stack.push(bit % 2)
+        bit = Math.floor(bit / 2)
+    }
+    while (!stack.isEmpty()){
+        result += stack.pop().toString()
+    }
+    return result
+
+}
