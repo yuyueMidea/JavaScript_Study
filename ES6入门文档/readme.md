@@ -1,7 +1,7 @@
-#ES6入门文档
+# ES6入门文档
 
 --------------------------------------
-`'foobarbaz'.includes('bar');      // => true
+```'foobarbaz'.includes('bar');      // => true
 
 'foobarbaz'.includes('bar', 4);   // => false
 
@@ -11,7 +11,7 @@
 
 'foobarbaz'.endsWith('baz');      // => true
 
-'foobarbaz'.endsWith('bar', 6);   // => true`
+'foobarbaz'.endsWith('bar', 6);   // => true```
 
 'string'.repeat(3); // => 'stringstringstring'
 
@@ -20,8 +20,6 @@
 'hello'.padEnd(10);           // => 'hello     '
 'hello'.padEnd(10, '1234');   // => 'hello12341'
 
-`'foo'.bold();                     // => '<b>foo</b>'
-
+```'foo'.bold();                     // => '<b>foo</b>'
 'bar'.anchor('a"b');              // => '<a name="a&quot;b">bar</a>'
-
-'baz'.link('http://example.com'); // => '<a href="http://example.com">baz</a>'`
+'baz'.link('http://example.com'); // => '<a href="http://example.com">baz</a>'```
