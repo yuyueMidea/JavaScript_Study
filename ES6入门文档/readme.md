@@ -1,12 +1,12 @@
 ES6入门文档
 
 --------------------------------------
-'foobarbaz'.includes('bar');      // => true
+`'foobarbaz'.includes('bar');      // => true
 'foobarbaz'.includes('bar', 4);   // => false
 'foobarbaz'.startsWith('foo');    // => true
 'foobarbaz'.startsWith('bar', 3); // => true
 'foobarbaz'.endsWith('baz');      // => true
-'foobarbaz'.endsWith('bar', 6);   // => true
+'foobarbaz'.endsWith('bar', 6);   // => true`
 
 'string'.repeat(3); // => 'stringstringstring'
 
