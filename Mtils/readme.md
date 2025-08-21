@@ -1,8 +1,22 @@
 # Mtils2
-Mtils是一套前端代码集合，提供常用的数据校验、数据加密、扩展函数、便捷函数。  <br />
-Mtils2 is Mtils Upgraded version
+Mtils是一套前端代码集合，提供常用的数据校验、数据加密、扩展函数、便捷函数。方便开发过程中减少重复造轮子。
+- 数据校验（Validation）常见的数据合法性校验，避免手写正则。 `Mtils.isEmail("test@example.com");   // true`
+- 数据加密 / 编码（Encrypt & Encode）在前端有时候需要做一些 简单加密/脱敏/编码， `Mtils.md5("123456");     // "e10adc3949ba59abbe56e057f20f883e"`
+- 扩展函数（Prototype Extensions）对一些原生对象进行扩展，常见有：
+```
+// 日期格式化
+Mtils.dateFormat(new Date(), "YYYY-MM-DD HH:mm:ss"); 
+// "2025-08-20 22:30:00"
+```
+- 便捷函数（Helper Utils）开发中经常用到的小函数: `Mtils.randomString(8);       // "a8f3kd92"`
+- 浏览器 & DOM 工具: `Mtils.copyText("复制成功");   // 复制到剪贴板`;
 
-
+可以把 Mtils 理解成是前端的 瑞士军刀 🔧：
+- 校验类：邮箱、手机号、身份证、URL 等
+- 加密类：MD5、SHA1、Base64、脱敏
+- 扩展类：日期、数组、字符串
+- 便捷类：防抖、节流、复制、下载
+- 环境类：设备检测、浏览器信息
 
 ##### 这是什么
 这是一个js的工具集合，封装了常见的表单校验，加密算法，原生函数扩展和一些其他的便捷方法。
