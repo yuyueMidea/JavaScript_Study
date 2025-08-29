@@ -1669,5 +1669,3 @@ const validateEmail = str =>
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
 ```
-
-## Powered by  &copy; dragonir 2017
