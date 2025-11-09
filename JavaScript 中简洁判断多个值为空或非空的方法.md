@@ -1,3 +1,4 @@
+```
 // 通用空值检查函数
 const isEmpty = (value) => {
   return value === null || 
@@ -13,3 +14,4 @@ const allEmpty = (...values) => values.every(isEmpty);
 // 使用示例
 console.log(allEmpty('', null, undefined)); // true
 console.log(allEmpty('', null, 'hello'));   // false
+```
